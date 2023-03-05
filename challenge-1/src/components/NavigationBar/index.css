@@ -19,7 +19,7 @@ h2 {
   margin-bottom: 4px;
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 768px) {
   .NavigationBar {
     height: 165px;
     justify-content: center;

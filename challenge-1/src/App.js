@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import Q2 from './components/Q2';
+import Results from './components/Results';
 import NavigationBar from './components/NavigationBar';
 import Steps from './components/Steps';
 
@@ -13,11 +14,11 @@ function App() {
     <div className="App">
       <NavigationBar />
       <main>
-        <Steps currentStep={2} />
+        <Steps currentStep={step} />
         {
           step === 2 ? 
-            <Q2 />
-            : null
+            <Q2 onContinue={() => setStep(7)}/>
+            : <Results />
         }
       </main>
     </div>

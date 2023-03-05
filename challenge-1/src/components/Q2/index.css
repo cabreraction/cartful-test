@@ -15,18 +15,68 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  row-gap: 5px;
-  column-gap: 5px;
+  row-gap: 10px;
+  column-gap: 10px;
   width: 90%;
-  border: solid;
+  margin-bottom: 2rem;
 }
 
-@media only screen and (min-width: 992px) {
+.continueButton {
+  width: 100%;
+  margin-bottom: 2rem;
+  background: #222222;
+  color: #FFFFFF;
+  padding: 15px 15px;
+  font-size: 13px;
+  font-weight: 700;
+  border: none;
+}
+
+.continueButton:hover {
+  cursor: pointer;
+}
+
+.linksSection {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.link {
+  font-size: 17px;
+  border-bottom: 1.5px solid #222222;
+  padding-bottom: 0.8rem;
+}
+
+.link:hover {
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
   .Q2 {
     margin-top: 2.5rem;
   }
 
   .Q2Title {
     font-size: 30px;;
+  }
+
+  .cardsFrame {
+    margin-top: 4.5rem;
+    column-gap: 1rem;
+    flex-wrap: nowrap;
+  }
+
+  .continueButton {
+    width: 10rem;
+    border-radius: 2.55px;
+    position: absolute;
+    bottom: 20px;
+  }
+
+  .linksSection {
+    position: absolute;
+    bottom: 10px;
   }
 }

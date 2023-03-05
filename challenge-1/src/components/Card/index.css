@@ -1,6 +1,19 @@
 .Card {
   width: 48%;
-  text-align: center;
+  height: 8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Card:hover {
+  cursor: pointer;
+}
+
+.cardTitle {
+  font-size: 14px;
+  margin-top: 0.5rem;
 }
 
 .yellow {
@@ -29,4 +42,42 @@
 
 .grey {
   background: #D2C6C3;
+}
+
+.notSelected { 
+  background: #E9E4DB;
+}
+
+@media only screen and (min-width: 768px) {
+  .Card {
+    width: 10rem;  
+  }
+
+  .Card:nth-child(1) {
+    transform: rotate(-12deg);
+  }
+  
+  .Card:nth-child(2) {
+    transform: rotate(-8deg) translateY(-30px);
+  }
+  
+  .Card:nth-child(3) {
+    transform: rotate(-4deg) translateY(-48px);
+  }
+  
+  .Card:nth-child(4) {
+    transform: rotate(0deg) translateY(-54px);
+  }
+  
+  .Card:nth-child(5) {
+    transform: rotate(4deg) translateY(-48px);
+  }
+  
+  .Card:nth-child(6) {
+    transform: rotate(8deg) translateY(-30px);
+  }
+  
+  .Card:nth-child(7) {
+    transform: rotate(12deg);
+  }
 }
