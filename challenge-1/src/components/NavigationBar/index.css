@@ -1,0 +1,32 @@
+.NavigationBar {
+  background-color: #222222;
+  height: 155px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+h2 {
+  font-family: Roboto;
+  color: #FFFFFF;
+}
+
+.burguerMenuLine {
+  height: 0;
+  width: 2rem;
+  border: 1px solid #FFFFFF;
+  margin-bottom: 4px;
+}
+
+@media only screen and (min-width: 992px) {
+  .NavigationBar {
+    height: 165px;
+    justify-content: center;
+  }
+
+  .burguerMenu {
+    position: absolute;
+    right: 40px;
+  }
+}

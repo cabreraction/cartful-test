@@ -1,0 +1,32 @@
+.Q2 {
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Q2Title {
+  color: #222222;
+  font-size: 22px;
+}
+
+.cardsFrame {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 5px;
+  column-gap: 5px;
+  width: 90%;
+  border: solid;
+}
+
+@media only screen and (min-width: 992px) {
+  .Q2 {
+    margin-top: 2.5rem;
+  }
+
+  .Q2Title {
+    font-size: 30px;;
+  }
+}

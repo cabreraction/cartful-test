@@ -1,0 +1,46 @@
+.Steps {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.step {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  box-sizing: border-box;
+  font-weight: 700;
+  font-size: 11px;
+  margin-right: 1rem;
+}
+
+.currentStep {
+  color: #FFFFFF;
+  background: #EEB426;
+  border: 2px solid #EEB426;
+}
+
+.previousStep {
+  color: #FFFFFF;
+  background: #222222;
+  border: 2px solid #222222;
+}
+
+.nextStep {
+  color: #222222;
+  background: #FFFFFF;
+  border: 1px solid #222222;
+}
+
+.last {
+  margin-right: 0 !important;
+}
+
+@media only screen and (min-width: 992px) {
+  .step {
+    margin-right: 2rem;
+  }
+}

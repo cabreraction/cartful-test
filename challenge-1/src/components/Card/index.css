@@ -1,0 +1,32 @@
+.Card {
+  width: 45%;
+  text-align: center;
+}
+
+.yellow {
+  background: #EEB426;
+}
+
+.green {
+  background: #9CAF96;
+}
+
+.pink {
+  background: #D4A1A6;
+}
+
+.orange { 
+  background: #DA8464;
+}
+
+.blue {
+  background: #A9C9E1;
+}
+
+.brown {
+  background: #C47D30;
+}
+
+.grey {
+  background: #D2C6C3;
+}
