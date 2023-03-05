@@ -4,19 +4,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
 }
 
 .title {
   color: #222222;
   font-size: 26px;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .subtitle {
   font-size: 14px;
   color: #222222;
   margin-top: 0;
+  text-align: center;
 }
 
 .resultsLinksSection {
@@ -35,9 +36,56 @@
   cursor: pointer;
 }
 
-.bestMatchFrame {}
+.resultsFrame {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  background: #E9E4DB;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.bestMatch {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bestMatchTitle {
+  color: #7E836D;
+  font-size: 24px;
+}
+
+.bestMatchName {
+  font-size: 20px;
+  margin-bottom: 16px;
+  margin-top: 16px;
+  color: #222222;
+}
+
+.bestMatchPrice {
+  font-size: 18px;
+  margin-top: 0;
+  color: #222222;
+}
+
+.loveIt {
+  display: flex;
+  flex-wrap: wrap;  
+}
+
+.detailsFrame {
+  display: flex;
+  flex-wrap: wrap;
+}
 
 @media only screen and (min-width: 768px) {
+  .resultsFrame {
+    width: 85%;
+  }
+
   .title {
     font-size: 48px;
     margin-bottom: 1.5rem;
@@ -46,5 +94,19 @@
   .resultsLinksSection {
     width: 20%;
     margin-top: 1.5rem;
+  }
+
+  .bestMatch {
+    width: 25%;
+  }
+
+  .loveIt {
+    width: 75%;
+  }
+
+  .detailsFrame {
+    flex-wrap: nowrap;
+    border-top: 1.5px dashed #222222;
+    width: 100%;
   }
 }
