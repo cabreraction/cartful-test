@@ -2,35 +2,50 @@ const fs = require('fs');
 const questionaire = require('./questionaire');
 
 (function calculateCombinations() {
-  let answersCount = 0;
-  let questionsNumber = questionaire.length;
+  let answersCount = 1;
   for (let { answers } of questionaire) {
-    answersCount += answers.length;
+    answersCount *= answers.length;
   }
 
-  console.log(answersCount * questionsNumber);
+  console.log(answersCount);
 })();
 
 (function writeCombinationsCSV() {
-  let headersCount = questionaire.length;
   let headersString = '';
   let csv = '';
   // process headers 
-  for (let {questionName} of questionaire) {
-    headersString += `${questionName},`;
-  }
-  headersString = headersString.substring(0, headersString.length-1);
-  csv += `${headersString}\n`;
+  const questions = questionaire.reduce((accumulator, current) => { 
+    accumulator.push(current.questionName); 
+    return accumulator;
+  } , [])
+  headersString = questions.join(',');
+  csv += `${headersString}\n`
 
   // process rows
-  const totalAnswers = questionaire.reduce((accumulator, current) => ({ answers: accumulator.answers.concat(current.answers) }), { answers: [] });
-  let rowsString = '';
-  for (let {answerName} of totalAnswers.answers) {
-    rowsString += `${answerName},`.repeat(headersCount);
-    rowsString = rowsString.substring(0, rowsString.length - 1);
-    csv += `${rowsString}\n`;
-    rowsString = '';
-  }
+  const answersArray = questionaire.map(question => question.answers.map(answer => answer.answerName));
+  
+  function recursiveSolver(arrayPos) {
+    if (answersArray.length - 1 > arrayPos) {
+      // combine my current elements with the processed elements
+      const processedElements = recursiveSolver(arrayPos + 1);
+      const currentElements = answersArray[arrayPos];
+      const combinedElements = [];
+      for (let i = 0; i < currentElements.length; i++) {
+        for (let j = 0; j < processedElements.length; j++) {
+          const fromCurrent = currentElements[i];
+          const fromProcessed = processedElements[j];
+          const combined = [fromCurrent, fromProcessed].join(',');
+          combinedElements.push(combined);
+        }
+      }
+      return combinedElements;
+    } else {
+      return answersArray[arrayPos];
+    }
+  } 
 
+  results = recursiveSolver(0);
+  const rowsString = results.join('\n')
+  csv += rowsString;
   fs.writeFile('combinations.csv', csv, () => console.log('done'));
 })();

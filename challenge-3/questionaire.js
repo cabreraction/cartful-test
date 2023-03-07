@@ -30,5 +30,45 @@ module.exports = [
         answerId: 22
       }
     ]
-  }
+  },
+  {
+    questionId: 3,
+    questionName: 'How old are you',
+    answers: [
+      {
+        answerName: 'Older than 10',
+        answerId: 31
+      },
+      {
+        answerName: 'Older than 20',
+        answerId: 32
+      },
+      {
+        answerName: 'Older than 30',
+        answerId: 33
+      },
+      {
+        answerName: 'Older than 40',
+        answerId: 34
+      },
+      {
+        answerName: 'Older than 50',
+        answerId: 35
+      }
+    ]
+  },
+  {
+    questionId: 4,
+    questionName: 'Do you prefer the beatles or the rolling stones',
+    answers: [
+      {
+        answerName: 'Beatles',
+        answerId: 41
+      },
+      {
+        answerName: 'Rolling Stones',
+        answerId: 42
+      }
+    ]
+  },
 ]
