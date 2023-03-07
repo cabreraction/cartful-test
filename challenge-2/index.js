@@ -1,7 +1,6 @@
 // script was developed and tested with this page -> https://littlesleepies.com/products/rust-rainbows-bamboo-viscose-zippy
 
 (function modifyPage() {
-
   function getAppropriateMessage() {
     // get the form so that we can get the value
     const forms = [...document.getElementsByTagName('form')]
@@ -60,6 +59,16 @@
 
     message.innerText = text;
   }
+
+  function hideMessage() {
+    // check if the message is already there
+    const message = document.getElementById('dynamicSaleMessage');
+    if (!message) {
+      return;
+    }
+
+    message.remove();
+  }
   
   // events related to showing the message
   const labels = [...document.getElementsByTagName('label')]
@@ -68,7 +77,13 @@
     || label.textContent.trim() === '2T'
     || label.textContent.trim() === '3T'
   );
-  fileteredLabels.forEach(element => element.addEventListener('click', showMessage))
+  fileteredLabels.forEach(element => element.addEventListener('click', showMessage));
+
+  const hideLabelOptions = [ 'Preemie', 'Newborn', '0-3 months', '3-6 months', '6-12 months', '12-18 months' ]
+  const hideLabels = labels.filter(label => 
+    hideLabelOptions.includes(label.textContent.trim()) 
+  );
+  hideLabels.forEach(element => element.addEventListener('click', hideMessage));
   
   // events related to changing the message content
   const decrementButton = document.querySelector('[aria-label="Decrement"]');
